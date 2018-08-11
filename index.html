@@ -8,7 +8,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="luisApp">
-    
+    <div ng-controller="ReadJson">
+        <table>
+            <tr>
+                <td>Numero</td>
+                <td>Nombre</td>
+                <td>Pais</td>
+                <td>Editar</td>
+                <td>Ver</td>
+                <td>Borrar</td>
+            </tr>
+            <tr ng-repeat="user in users">
+                
+                <td>{{user.numero}}</td>
+                <td>{{user.nombre}}</td>
+                <td>{{user.pais}}</td>
+                <td ng-click="EditUser(user)" class="boton">X</td>
+                <td ng-click="ViewUser(user)" class="boton">X</td>
+                <td ng-click="DeleteUser(user)" class="boton">X</td>
+            </tr>
+        </table>
+        <div>
+            <form ng-submit="AddUser()">
+                <input type="text" ng-model="" placeholder="Numero">
+                <input type="text" ng-model="" placeholder="Nombre">
+                <input type="text" ng-model="" placeholder="Pais">
+
+                <input type="button" value="submit" class="boton">
+            </form>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="app.js"></script>
