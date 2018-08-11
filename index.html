@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body ng-app="luisApp">
     <div ng-controller="ReadJson">
         <h2 class="center">Angular JS CRUD, read data in JSON</h2>
@@ -20,13 +22,32 @@
                 <td>Borrar</td>
             </tr>
             <tr ng-repeat="user in users" class="center">
-                
-                <td>{{user.numero}}</td>
-                <td>{{user.nombre}}</td>
-                <td>{{user.pais}}</td>
-                <td ng-click="EditUser(user)" class="boton">X</td>
-                <td ng-click="ViewUser(user)" class="boton">X</td>
-                <td ng-click="DeleteUser(user)" class="boton">X</td>
+
+
+                <td>
+                    <input type="text" ng-model="user.numero" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{ user.numero }}</span>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.nombre" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{ user.nombre }}</span>
+                </td>
+                <td>
+                    <input type="text" ng-model="user.pais" ng-show="user.editable">
+                    <span ng-hide="user.editable">{{ user.pais }}</span>
+                </td>
+                <td>
+                    <span ng-click="EditUser($index)" ng-hide="user.editable" class="boton">Edit</span>
+                    <span ng-click="SaveUser($index)" ng-show="user.editable" class="boton">Save</span>
+                </td>
+                <td>
+                    
+                    <a ui-sref="viewComponent" class="boton">View</a>
+
+                </td>
+                <td>
+                    <span ng-click="DeleteUser(user)" class="boton">Borrar</span>
+                </td>
             </tr>
         </table>
         <div>
@@ -43,4 +64,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

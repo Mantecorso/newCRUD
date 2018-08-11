@@ -12,10 +12,29 @@ app.controller ("ReadJson",function($scope,$http){
                 $scope.users.splice(DeleteUser,1);
     }
 
-    $scope.EditUser = function(user){
+    $scope.entity = {}
+	    
+//	 $scope.edit = function(index){
+//	   $scope.entity = $scope.users[index];
+//	   $scope.entity.index = index;
+//	   $scope.entity.editable = true;
+//	 }
+//	    
+//	 $scope.save = function(index){
+//	   $scope.users[index].editable = false;
+//	   
+//	 }
 
-                var editPlayer = $scope.users.indexOf(user);
-                $scope.users.splice(EditUser,1);
+    $scope.EditUser = function(index){
+
+        $scope.entity = $scope.users[index];
+        $scope.entity.index = index;
+        $scope.entity.editable = true;
+                
+    }
+
+    $scope.SaveUser = function(index){
+        $scope.users[index].editable = false; 
     }
 
     $scope.ViewUser = function(user){
