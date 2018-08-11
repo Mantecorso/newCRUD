@@ -1,5 +1,5 @@
 
-  .center {
+.center {
     text-align: center;
     
 }
@@ -8,8 +8,15 @@
     border: 2px solid peru;
     background-color: plum;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 5px;
     padding: 5px;
+}
+
+.espace {
+    border: 2px solid peru;
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px;
 }
 
 body{
@@ -30,4 +37,3 @@ body{
     cursor:pointer;
   }
 
-  

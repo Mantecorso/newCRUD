@@ -19,7 +19,7 @@
                 <td>Ver</td>
                 <td>Borrar</td>
             </tr>
-            <tr ng-repeat="user in users">
+            <tr ng-repeat="user in users" class="center">
                 
                 <td>{{user.numero}}</td>
                 <td>{{user.nombre}}</td>
@@ -30,10 +30,10 @@
             </tr>
         </table>
         <div>
-            <form ng-submit="AddUser()">
-                <input type="text" ng-model="" placeholder="Numero">
-                <input type="text" ng-model="" placeholder="Nombre">
-                <input type="text" ng-model="" placeholder="Pais">
+            <form ng-submit="AddUser()" class="espace">
+                <input type="text" ng-model="numero" placeholder="Numero">
+                <input type="text" ng-model="nombre" placeholder="Nombre">
+                <input type="text" ng-model="pais" placeholder="Pais">
 
                 <input type="submit" value="submit" class="boton">
             </form>
